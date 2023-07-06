@@ -1,4 +1,7 @@
+import Footer from '@/components/Footer';
 import './globals.css';
+import Navbar from '@/components/Navbar';
+import ClientProvider from '@/components/ClientProvider';
 
 export const metadata = {
   title: 'Next-Ecommerce',
@@ -12,7 +15,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className="antialiased scroll-smooth">
-      <body className={''}>{children}</body>
+      <body className={''}>
+        <ClientProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ClientProvider>
+      </body>
     </html>
   );
 }

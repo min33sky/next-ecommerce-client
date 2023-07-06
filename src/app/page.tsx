@@ -1,9 +1,9 @@
-import { Button } from '@/components/ui/button';
+import Container from '@/components/Container';
 
 export default function Home() {
   return (
-    <div>
-      <Button>Click me</Button>
-    </div>
+    <Container>
+      <div className="space-y-10 pb-10">Billboard Component goes here</div>
+    </Container>
   );
 }
