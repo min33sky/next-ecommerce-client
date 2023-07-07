@@ -1,10 +1,9 @@
-'use client';
-
-import Image from 'next/image';
-import React from 'react';
-import { Button } from './ui/button';
-import { Expand, ShoppingCart } from 'lucide-react';
-import { formatToCurrencyKRW } from '@/lib/utils';
+import Image from "next/image";
+import React from "react";
+import { Button, buttonVariants } from "./ui/button";
+import { Expand, ShoppingCart } from "lucide-react";
+import { formatToCurrencyKRW } from "@/lib/utils";
+import Link from "next/link";
 
 interface ProductCardProps {
   data: Product;
@@ -23,12 +22,24 @@ export default function ProductCard({ data }: ProductCardProps) {
         />
         <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">
           <div className="flex gap-x-6 justify-center">
-            <Button size={'icon'} variant={'secondary'}>
+            <Link
+              href={`/products/${data.id}`}
+              className={buttonVariants({
+                variant: "secondary",
+                size: "icon",
+              })}
+            >
               <Expand size={20} className="text-gray-600" />
-            </Button>
-            <Button size={'icon'}>
+            </Link>
+            <Link
+              href={`/products/${data.id}`}
+              className={buttonVariants({
+                variant: "secondary",
+                size: "icon",
+              })}
+            >
               <ShoppingCart size={20} className="text-gray-600" />
-            </Button>
+            </Link>
           </div>
         </div>
       </div>
