@@ -2,6 +2,7 @@ import { getProduct } from "@/actions/getProduct";
 import { getProducts } from "@/actions/getProducts";
 import Container from "@/components/Container";
 import Gallery from "@/components/Gallery";
+import ProductInfo from "@/components/ProductInfo";
 import ProductList from "@/components/ProductList";
 import { Metadata } from "next";
 import React from "react";
@@ -42,8 +43,7 @@ export default async function ProductDetailPage({
             <Gallery images={product?.images} />
 
             <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
-              {/* Info */}
-              Info G
+              <ProductInfo product={product} />
             </div>
           </div>
 
