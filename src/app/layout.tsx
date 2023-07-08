@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko" className="antialiased scroll-smooth">
+    <html lang="ko" className="antialiased">
       <body className={""}>
         <ClientProvider>
           <Navbar />
