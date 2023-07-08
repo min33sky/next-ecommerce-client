@@ -21,7 +21,7 @@ export default function Filters<T extends Size | Color>({
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const { setSearchParam, saveScrollPosition } = usePersistentScroll();
+  const { saveScrollPosition } = usePersistentScroll();
 
   const selectedValue = searchParams.get(valueKey);
 

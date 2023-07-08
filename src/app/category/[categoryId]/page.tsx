@@ -5,6 +5,7 @@ import { getSizes } from "@/actions/getSizes";
 import BillboardView from "@/components/BillboardView";
 import Container from "@/components/Container";
 import Filters from "@/components/Filters";
+import MobileFilters from "@/components/MobileFilters";
 import NoResult from "@/components/NoResult";
 import ProductCard from "@/components/ProductCard";
 import React from "react";
@@ -53,9 +54,11 @@ export default async function CategoryDetailPage({
         <div className="px-4 sm:px-6 lg:px-8 pb-24">
           <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
             {/* Add Mobile Filters */}
+            <MobileFilters colors={colors} sizes={sizes} />
+
             <div className="hidden lg:block">
               <Filters data={sizes} name="사이즈" valueKey="size" />
-              <Filters data={colors} name="색상" valueKey="color" />
+              <Filters data={colors} name="색상" valueKey="color" />M
             </div>
 
             <div className="mt-6 lg:col-span-4 lg:mt-0">
