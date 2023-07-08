@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { Button, buttonVariants } from "./ui/button";
+import { Button, buttonVariants } from "../ui/button";
 import { Expand, ShoppingCart } from "lucide-react";
 import { formatToCurrencyKRW } from "@/lib/utils";
 import Link from "next/link";

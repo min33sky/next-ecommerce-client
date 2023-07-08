@@ -1,16 +1,16 @@
-import { getBillboard } from '@/actions/getBillboard';
-import { getProducts } from '@/actions/getProducts';
-import BillboardView from '@/components/BillboardView';
-import Container from '@/components/Container';
-import ProductList from '@/components/ProductList';
+import { getBillboard } from "@/actions/getBillboard";
+import { getProducts } from "@/actions/getProducts";
+import BillboardView from "@/components/BillboardView";
+import Container from "@/components/Container";
+import ProductList from "@/components/products/ProductList";
 
 export default async function Home() {
   const { data: products } = await getProducts({
     isFeatured: true,
   });
-  const { data: billboard } = await getBillboard('cljnvf1460001pbr5f9s489zt');
+  const { data: billboard } = await getBillboard("cljnvf1460001pbr5f9s489zt");
 
-  console.log('products: ', products);
+  console.log("products: ", products);
 
   return (
     <Container>

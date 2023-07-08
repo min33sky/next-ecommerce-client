@@ -1,6 +1,6 @@
-import React from 'react';
-import NoResult from './NoResult';
-import ProductCard from './ProductCard';
+import React from "react";
+import ProductCard from "./ProductCard";
+import NoResult from "../NoResult";
 
 interface ProductListProps {
   title: string;

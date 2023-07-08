@@ -28,7 +28,6 @@ export default function MobileFilters({ sizes, colors }: Props) {
           필터
         </Button>
       </SheetTrigger>
-      {/* @ts-expect-error */}
       <SheetContent>
         <SheetHeader>
           <SheetTitle>상품 필터링</SheetTitle>

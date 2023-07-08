@@ -4,10 +4,10 @@ import { getProducts } from "@/actions/getProducts";
 import { getSizes } from "@/actions/getSizes";
 import BillboardView from "@/components/BillboardView";
 import Container from "@/components/Container";
-import Filters from "@/components/Filters";
-import MobileFilters from "@/components/MobileFilters";
+import Filters from "@/components/filters/Filters";
+import MobileFilters from "@/components/filters/MobileFilters";
 import NoResult from "@/components/NoResult";
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/products/ProductCard";
 import React from "react";
 
 export const dynamic = "force-dynamic";

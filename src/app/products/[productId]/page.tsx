@@ -2,8 +2,8 @@ import { getProduct } from "@/actions/getProduct";
 import { getProducts } from "@/actions/getProducts";
 import Container from "@/components/Container";
 import Gallery from "@/components/Gallery";
-import ProductInfo from "@/components/ProductInfo";
-import ProductList from "@/components/ProductList";
+import ProductInfo from "@/components/products/ProductInfo";
+import ProductList from "@/components/products/ProductList";
 import { Metadata } from "next";
 import React from "react";
 
