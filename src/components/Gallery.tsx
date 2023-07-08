@@ -1,12 +1,17 @@
-import React from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+"use client";
+
+import React, { useState } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 interface GalleryProps {
   images: Image[];
 }
 
 export default function Gallery({ images }: GalleryProps) {
+  const [targetId, setTargetId] = useState(images[0].id);
+
   return (
     <Tabs
       defaultValue={images[0].id}
@@ -25,12 +30,16 @@ export default function Gallery({ images }: GalleryProps) {
         </TabsContent>
       ))}
 
-      <TabsList className="mt-20 bg-white">
+      <TabsList className="mt-20 bg-transparent">
         {images.map((image) => (
           <TabsTrigger
             key={image.id}
             value={image.id}
-            className="relative aspect-square w-32 h-32 sm:w-24 sm:h-24 rounded-sm overflow-hidden mr-4 hover:ring-2 active:ring-2"
+            className={cn(
+              "relative aspect-square w-32 h-32 sm:w-24 sm:h-24 rounded-sm overflow-hidden mr-4",
+              targetId === image.id && "ring-2 ring-offset-2 ring-violet-800",
+            )}
+            onClick={() => setTargetId(image.id)}
           >
             <Image
               fill

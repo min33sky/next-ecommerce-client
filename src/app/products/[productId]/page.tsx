@@ -3,11 +3,23 @@ import { getProducts } from "@/actions/getProducts";
 import Container from "@/components/Container";
 import Gallery from "@/components/Gallery";
 import ProductList from "@/components/ProductList";
+import { Metadata } from "next";
 import React from "react";
 
 interface ProductDetailPageProps {
   params: {
     productId: string;
+  };
+}
+
+export async function generateMetadata({
+  params,
+}: ProductDetailPageProps): Promise<Metadata> {
+  const { data: product } = await getProduct(params.productId);
+
+  return {
+    title: `${product?.name} - Next-Ecommerce`,
+    description: product?.name,
   };
 }
 
