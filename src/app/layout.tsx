@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import ClientProvider from "@/components/ClientProvider";
 import ProductPreviewModal from "@/components/modals/ProductPreviewModal";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Next-Ecommerce",
@@ -22,6 +23,7 @@ export default function RootLayout({
           {children}
           <ProductPreviewModal />
           <Footer />
+          <Toaster />
         </ClientProvider>
       </body>
     </html>

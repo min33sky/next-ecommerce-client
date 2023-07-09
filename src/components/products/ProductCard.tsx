@@ -8,6 +8,7 @@ import { formatToCurrencyKRW } from "@/lib/utils";
 import Link from "next/link";
 import { useModal } from "@/hooks/useModal";
 import { useCurrentProduct } from "@/hooks/useCurrentProduct";
+import { useCart } from "@/hooks/useCart";
 
 interface ProductCardProps {
   data: Product;
@@ -16,12 +17,18 @@ interface ProductCardProps {
 export default function ProductCard({ data }: ProductCardProps) {
   const { onOpen } = useModal();
 
+  const {addItem} = useCart();
   const { setProduct } = useCurrentProduct();
 
   const onOpenPreview = (e: React.MouseEvent) => {
     e.preventDefault();
     setProduct(data);
     onOpen("product-preview", data.id);
+  };
+
+  const onAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    addItem(data);
   };
 
   return (
@@ -41,7 +48,7 @@ export default function ProductCard({ data }: ProductCardProps) {
                 <Expand size={20} className="text-gray-600" />
               </Button>
 
-              <Button variant={"secondary"}>
+              <Button variant={"secondary"} onClick={onAddToCart}>
                 <ShoppingCart size={20} className="text-gray-600" />
               </Button>
             </div>
