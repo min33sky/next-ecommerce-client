@@ -7,6 +7,7 @@ import { Expand, ShoppingCart } from "lucide-react";
 import { formatToCurrencyKRW } from "@/lib/utils";
 import Link from "next/link";
 import { useModal } from "@/hooks/useModal";
+import { useCurrentProduct } from "@/hooks/useCurrentProduct";
 
 interface ProductCardProps {
   data: Product;
@@ -15,8 +16,11 @@ interface ProductCardProps {
 export default function ProductCard({ data }: ProductCardProps) {
   const { onOpen } = useModal();
 
+  const { setProduct } = useCurrentProduct();
+
   const onOpenPreview = (e: React.MouseEvent) => {
     e.preventDefault();
+    setProduct(data);
     onOpen("product-preview", data.id);
   };
 
@@ -33,17 +37,9 @@ export default function ProductCard({ data }: ProductCardProps) {
           />
           <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">
             <div className="flex gap-x-6 justify-center">
-              {/* <Link
-                href={`/products/${data.id}`}
-                className={buttonVariants({
-                  variant: "secondary",
-                  size: "icon",
-                })}
-              > */}
               <Button variant={"secondary"} onClick={onOpenPreview}>
                 <Expand size={20} className="text-gray-600" />
               </Button>
-              {/* </Link> */}
 
               <Button variant={"secondary"}>
                 <ShoppingCart size={20} className="text-gray-600" />

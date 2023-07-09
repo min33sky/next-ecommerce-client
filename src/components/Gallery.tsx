@@ -30,13 +30,13 @@ export default function Gallery({ images }: GalleryProps) {
         </TabsContent>
       ))}
 
-      <TabsList className="mt-20 bg-transparent">
+      <TabsList className="mt-20 bg-transparent w-full">
         {images.map((image) => (
           <TabsTrigger
             key={image.id}
             value={image.id}
             className={cn(
-              "relative aspect-square w-32 h-32 sm:w-24 sm:h-24 rounded-sm overflow-hidden mr-4",
+              "relative aspect-square w-32 sm:w-24 rounded-sm overflow-hidden mr-4",
               targetId === image.id && "ring-2 ring-offset-2 ring-violet-800",
             )}
             onClick={() => setTargetId(image.id)}
