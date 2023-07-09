@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import ClientProvider from "@/components/ClientProvider";
+import ProductPreviewModal from "@/components/modals/ProductPreviewModal";
 
 export const metadata = {
   title: "Next-Ecommerce",
@@ -19,6 +20,7 @@ export default function RootLayout({
         <ClientProvider>
           <Navbar />
           {children}
+          <ProductPreviewModal />
           <Footer />
         </ClientProvider>
       </body>
