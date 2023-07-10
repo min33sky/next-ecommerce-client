@@ -3,11 +3,20 @@
 import Container from "@/components/Container";
 import CartItem from "@/components/carts/CartItem";
 import { useCart } from "@/hooks/useCart";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CartSummary from "./CartSummary";
 
 export default function CartPage() {
+  const [isMounted, setIsMounted] = useState(false);
   const cart = useCart();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div className="bg-white">
